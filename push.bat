@@ -1,5 +1,21 @@
-$commitmsg = Read-Host "Enter commit message"
+@echo off
+:: ==========================================
+:: Git Push Script (Batch file for Windows)
+:: ==========================================
+
+:: Ask for a commit message
+set /p commitmsg="Enter commit message: "
+
+:: Stage all changes
 git add .
-git commit -m "$commitmsg"
+
+:: Commit with message
+git commit -m "%commitmsg%"
+
+:: Push to remote
 git push
-Write-Output "Changes pushed!"
+
+:: Confirm push
+echo.
+echo Changes pushed successfully!
+pause
