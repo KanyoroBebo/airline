@@ -4,6 +4,9 @@ on: push
 jobs:
   test_project:
     runs-on: ubuntu-latest
+    env:
+      SECRET_KEY: ${{ secrets.SECRET_KEY }}
+
     steps:
       - uses: actions/checkout@v2
 
